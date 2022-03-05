@@ -7,17 +7,6 @@ teach_student = int(input("Enter student of teach this month:"))
 incentive = 5000
 cut_in_salary = 8000
 
-# Teacher lecture in a month
-while True:
-    if L_of_month >= 12:
-        print("L_of_month is grater than 12")
-        break
-
-
-    elif L_of_month <= 12:
-        print("L_of_month is less than 12")
-        break
-
 # Total salary of trainer
 totalsalryoftrainer_1 = 20000
 
@@ -27,26 +16,29 @@ HRA = 20000 * 0.2
 PF = 20000 * 0.18
 
 # Total salary of Trainer 1
-total_1 = totalsalryoftrainer_1 + incentive + TA + DA + HRA - PF
-Net = total_1 - cut_in_salary - incentive
-print(total_1)
-print(Net)
+total_1 = totalsalryoftrainer_1 + TA + DA + HRA - PF
+
+
+# Teacher lecture in a month
+
+if L_of_month >= 12:
+    print("L_of_month is grater than 12")
+    net_sal = total_1 + incentive
+    print(net_sal)
+
+elif L_of_month < 12:
+    print("L_of_month is less than 12")
+    net_sal = total_1 - cut_in_salary
+    print(net_sal)
+
+
 
 # Trainer 2
 T_2 = input("Enter Trainer 2 Name:")
 T_S = input("Enter Trainer 2 Subject: ")
 L_of_month2 = int(input("Enter total lecture of month:"))
+
 incentive_2 = 10000
-
-while True:
-    if L_of_month2 >= 16:
-        print("L_of_month2 is greater than 16")
-        break
-
-    elif L_of_month2 <= 16:
-        print("Lecture of Month is less than 16 ")
-        break
-
 cut_2 = 8000
 TA_2 = 0.1 * 30000
 DA_2 = 0.07 * 30000
@@ -57,13 +49,19 @@ PF_2 = 0.18 * 30000
 totalsalaryoftrainers_2 = 30000
 
 # Total salary after incentive
-total1 = totalsalaryoftrainers_2 + incentive + TA + DA + HRA - PF
-total_2 = total1 - cut_2 - incentive
-print(total1)
+total1 = totalsalaryoftrainers_2 + TA + DA + HRA - PF
 
-# Lecture is less than 16
-print("L_of_month is less than 16")
-print(total_2)
+if L_of_month2 >= 16:
+    print("L_of_month2 is greater than 16")
+    net_sal_1 = totalsalaryoftrainers_2 + incentive_2
+    print(net_sal_1)
+
+
+elif L_of_month2 < 16:
+    print("Lecture of Month is less than 16 ")
+    net_sal_1 = totalsalaryoftrainers_2 - cut_2
+    print(net_sal_1)
+
 
 # Searching OF All Information of trainer
 nos = int(input("Enter no to search :"))
@@ -103,9 +101,6 @@ print('\tTotal Salary-1:-', totalsalryoftrainer_1)
 print("*" * 50)
 print("\tTotal-1:-", total_1)
 print("*" * 50)
-print("\tNet :-", Net)
-print("*" * 50)
-
 
 print("\t\tTrainer-2 All Information\t\t")
 print("*"*50)
@@ -120,6 +115,5 @@ print("*" * 50)
 print("\tTotal Salary-2:-", totalsalaryoftrainers_2)
 print("*" * 50)
 print("\tTotal-1:-", total1)
-print("*" * 50)
-print("\tNet :-", total_2)
-print("*" * 50)
+print("*" * 50) 
+
